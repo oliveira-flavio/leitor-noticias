@@ -1,3 +1,11 @@
+<div id="carouselExampleSlidesOnly" class="carousel slide" data-bs-ride="carousel">
+    <div class="carousel-inner">
+        <div class="carousel-item active" *ngFor="let item of response.articles">
+            <img src={{item.urlToImage}} class="d-block w-100" alt="...">
+        </div>
+    </div>
+</div>
+
 <div class="container">
     <ul>
         <li *ngFor="let item of response.articles"> {{item.title}} </li>
@@ -28,7 +36,7 @@
             <div class="card-body">
                 <h5 class="card-title">{{item.title}}</h5>
                 <p class="card-text">{{item.description}}</p>
-                <a href={{item.url}} class="btn btn-primary">Read the article</a>
+                <a href={{item.url}} class="btn btn-primary">Read More</a>
             </div>
         </div>
     </div>
