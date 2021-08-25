@@ -1,5 +1,35 @@
-<div class="container" >
-    <div *ngFor="let item of response.articles" >
+<div class="container">
+    <ul>
+        <li *ngFor="let item of response.articles"> {{item.title}} </li>
+    </ul>
+</div>
 
+<table class="table table-dark table-striped">
+    <thead>
+        <tr>
+            <th scope="col">Author</th>
+            <th scope="col">Title</th>
+            <th scope="col">Content</th>
+        </tr>
+    </thead>
+    <tbody *ngFor="let item of response.articles">
+        <tr>
+            <td>{{item.author}}</td>
+            <td>{{item.title}}</td>
+            <td>{{item.content}}</td>
+        </tr>
+    </tbody>
+</table>
+
+<div class="container position-relative">
+    <div class="row g-5">
+        <div class="card" style="width: 18rem;" *ngFor="let item of response.articles">
+            <img src={{item.urlToImage}} class="card-img-top" alt="...">
+            <div class="card-body">
+                <h5 class="card-title">{{item.title}}</h5>
+                <p class="card-text">{{item.description}}</p>
+                <a href={{item.url}} class="btn btn-primary">Read the article</a>
+            </div>
+        </div>
     </div>
 </div>
